@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClientDeck.tech | Your Freelance Business, All In One Place</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config for Custom Branding -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb', // Primary action color
+                            700: '#1d4ed8',
+                            900: '#1e3a8a',
+                            950: '#0f172a', // Deep slate for premium darks
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for things Tailwind handles less elegantly */
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Glassmorphism utilities */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Scroll Reveal Utility */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* FAQ Accordion Styles */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-brand-500 selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300 glass" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold text-xl">
+                        C
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-slate-900">ClientDeck<span class="text-brand-600">.tech</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Features</a>
+                    <a href="#pricing" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">Pricing</a>
+                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-brand-600 transition-colors">FAQ</a>
+                </div>
+                <div>
+                    <a href="#early-access" class="inline-flex items-center justify-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-xl text-white bg-brand-950 hover:bg-brand-900 shadow-sm hover:shadow-md transition-all hover:-translate-y-0.5">
+                        Join Waitlist
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Decoration -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-[800px] pointer-events-none z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-brand-50/80 to-transparent"></div>
+            <div class="absolute top-0 right-0 -mr-40 mt-10 w-[600px] h-[600px] rounded-full bg-brand-100/40 blur-3xl"></div>
+            <div class="absolute top-40 left-0 -ml-40 w-[500px] h-[500px] rounded-full bg-blue-100/40 blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100/50 border border-brand-200 text-brand-700 text-sm font-medium mb-8">
+                    <span class="flex h-2 w-2 rounded-full bg-brand-600 animate-pulse"></span>
+                    Currently in private beta
+                </div>
+                <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight text-brand-950 mb-6 leading-[1.1]">
+                    Your Clients, Projects & Invoices — <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-400">All In One Place</span>
+                </h1>
+                <p class="text-lg lg:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
+                    Stop juggling spreadsheets, sticky notes, and forgotten follow-ups. ClientDeck gives freelancers one clean workspace to manage every relationship, from first contact to final payment.
+                </p>
+                
+                <!-- Email Capture Form -->
+                <form id="hero-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl shadow-brand-500/10 rounded-2xl p-2 bg-white border border-slate-200">
+                    <input type="email" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-3 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-sm">
+                        Get Early Access
+                    </button>
+                </form>
+                <div id="hero-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200">
+                    🎉 You're on the list! Keep an eye on your inbox.
+                </div>
+
+                <div class="mt-6 flex items-center justify-center gap-2 text-sm text-slate-500">
+                    <i data-lucide="zap" class="w-4 h-4 text-amber-500 fill-amber-500"></i>
+                    <span>Join <strong>500+</strong> freelancers already on the waitlist · No credit card required</span>
+                </div>
+            </div>
+
+            <!-- Abstract UI Mockup (CSS Only) -->
+            <div class="mt-20 relative max-w-5xl mx-auto animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="rounded-2xl border border-slate-200/60 bg-white shadow-2xl shadow-slate-200/50 overflow-hidden flex flex-col sm:flex-row h-[500px]">
+                    <!-- Sidebar -->
+                    <div class="w-64 bg-slate-50 border-r border-slate-100 hidden sm:flex flex-col p-4">
+                        <div class="flex items-center gap-2 mb-8 px-2">
+                            <div class="w-6 h-6 rounded bg-brand-600 text-[10px] text-white flex items-center justify-center font-bold">C</div>
+                            <div class="text-sm font-bold">ClientDeck</div>
+                        </div>
+                        <div class="space-y-1">
+                            <div class="px-3 py-2 bg-white rounded-lg shadow-sm border border-slate-100 text-sm font-medium flex items-center gap-2 text-brand-600"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard</div>
+                            <div class="px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 text-slate-500"><i data-lucide="users" class="w-4 h-4"></i> Clients</div>
+                            <div class="px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 text-slate-500"><i data-lucide="folder-kanban" class="w-4 h-4"></i> Projects</div>
+                            <div class="px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 text-slate-500"><i data-lucide="receipt" class="w-4 h-4"></i> Invoices</div>
+                        </div>
+                    </div>
+                    <!-- Main Content Area -->
+                    <div class="flex-1 p-6 lg:p-10 flex flex-col gap-6 bg-[#fafafa]">
+                        <div class="flex justify-between items-center">
+                            <div class="h-6 w-32 bg-slate-200 rounded-md"></div>
+                            <div class="h-8 w-24 bg-brand-600 text-white text-xs font-medium rounded-lg flex items-center justify-center">+ New Project</div>
+                        </div>
+                        <!-- Stats Row -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-2">
+                                <div class="h-4 w-20 bg-slate-100 rounded"></div>
+                                <div class="h-8 w-16 bg-slate-800 rounded"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-2">
+                                <div class="h-4 w-24 bg-slate-100 rounded"></div>
+                                <div class="h-8 w-24 bg-brand-600 rounded"></div>
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm flex flex-col gap-2">
+                                <div class="h-4 w-16 bg-slate-100 rounded"></div>
+                                <div class="h-8 w-12 bg-slate-800 rounded"></div>
+                            </div>
+                        </div>
+                        <!-- Board/List Area -->
+                        <div class="flex-1 bg-white border border-slate-100 rounded-xl shadow-sm p-4 flex flex-col gap-3">
+                            <div class="flex border-b border-slate-100 pb-2 mb-2">
+                                <div class="h-4 w-20 bg-slate-100 rounded"></div>
+                            </div>
+                            <!-- List Items -->
+                            <div class="flex items-center justify-between p-3 rounded-lg border border-slate-50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-xs text-blue-600 font-bold">A</div>
+                                    <div class="flex flex-col gap-1">
+                                        <div class="h-3 w-24 bg-slate-800 rounded"></div>
+                                        <div class="h-2 w-16 bg-slate-300 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="h-6 w-16 bg-green-100 rounded-full"></div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg border border-slate-50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-xs text-amber-600 font-bold">M</div>
+                                    <div class="flex flex-col gap-1">
+                                        <div class="h-3 w-32 bg-slate-800 rounded"></div>
+                                        <div class="h-2 w-20 bg-slate-300 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="h-6 w-20 bg-amber-100 rounded-full"></div>
+                            </div>
+                            <div class="flex items-center justify-between p-3 rounded-lg border border-slate-50 hover:bg-slate-50 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-xs text-purple-600 font-bold">S</div>
+                                    <div class="flex flex-col gap-1">
+                                        <div class="h-3 w-20 bg-slate-800 rounded"></div>
+                                        <div class="h-2 w-16 bg-slate-300 rounded"></div>
+                                    </div>
+                                </div>
+                                <div class="h-6 w-16 bg-slate-100 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SECTION -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">The Struggle is Real</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Freelancing is hard enough.<br/>Managing clients shouldn't be.</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pain Point 1 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-200 transition-colors reveal">
+                    <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center mb-6">
+                        <i data-lucide="user-x" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">You're losing track of clients</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Leads fall through the cracks. You forget to follow up. A potential $2,000 project ghosts you because life got busy.
+                    </p>
+                </div>
+                <!-- Pain Point 2 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-200 transition-colors reveal" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center mb-6">
+                        <i data-lucide="folder-search" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Your projects live everywhere</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Notes in your phone, files on your desktop, updates in your email. Finding anything takes 10 minutes you don't have.
+                    </p>
+                </div>
+                <!-- Pain Point 3 -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-brand-200 transition-colors reveal" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-xl bg-slate-200 text-slate-600 flex items-center justify-center mb-6">
+                        <i data-lucide="receipt" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Invoicing is a nightmare</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        You hate chasing payments. Clients "forget." You're not sure who owes you what, or how much you actually made this month.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION & FEATURES -->
+    <section id="features" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+                <p class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Meet ClientDeck</p>
+                <h2 class="text-4xl md:text-5xl font-bold text-brand-950 mb-6">One tool that runs your entire freelance business.</h2>
+                <p class="text-lg text-slate-600">
+                    No bloat. No learning curve. Just the features you actually need — built for people who work for themselves.
+                </p>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Feature 1: Left Text, Right UI -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
+                    <div class="flex-1 lg:pr-10">
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">Know everything about every client</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            Store contacts, communication history, notes, and files in one place. Never say "wait, who are you again?"
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> Centralized contact directory</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> Interaction history timeline</li>
+                            <li class="flex items-center gap-3 text-slate-700"><i data-lucide="check-circle-2" class="w-5 h-5 text-brand-500"></i> Private client notes</li>
+                        </ul>
+                    </div>
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
+                        <!-- Abstract Contact Card Mockup -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative z-10">
+                            <div class="flex items-center gap-4 border-b border-slate-100 pb-6 mb-6">
+                                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 to-brand-600 flex items-center justify-center text-white text-2xl font-bold">JD</div>
+                                <div>
+                                    <div class="text-xl font-bold text-slate-900">John Doe</div>
+                                    <div class="text-sm text-slate-500">Acme Corp · CEO</div>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-slate-500">Status</span>
+                                    <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full font-medium">Active Client</span>
+                                </div>
+                                <div class="flex justify-between items-center text-sm">
+                                    <span class="text-slate-500">Total Value</span>
+                                    <span class="font-bold text-slate-900">$12,450.00</span>
+                                </div>
+                                <div class="p-3 bg-slate-50 rounded-lg text-sm text-slate-600 mt-4 border border-slate-100">
+                                    <strong class="text-slate-900 block mb-1">Last Note (Yesterday):</strong>
+                                    Loves the new direction. Wants to schedule a review call next Tuesday.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Decorative bg block -->
+                        <div class="absolute -top-4 -right-4 w-full h-full bg-brand-100 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Right Text, Left UI -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 reveal">
+                    <div class="flex-1 lg:pl-10">
+                        <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
+                            <i data-lucide="layout-kanban" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">See exactly where every project stands</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            A simple visual board shows you what's not started, what's in progress, and what's done. Always know what needs your attention today.
+                        </p>
+                    </div>
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
+                        <!-- Abstract Kanban Mockup -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative z-10 flex gap-4 overflow-hidden">
+                            <!-- Column 1 -->
+                            <div class="flex-1 bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">To Do</div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 mb-2">
+                                    <div class="h-2 w-12 bg-purple-200 rounded mb-2"></div>
+                                    <div class="h-4 w-full bg-slate-800 rounded mb-4"></div>
+                                    <div class="flex justify-between">
+                                        <div class="w-5 h-5 rounded-full bg-slate-200"></div>
+                                        <div class="h-4 w-10 bg-slate-100 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column 2 -->
+                            <div class="flex-1 bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                <div class="text-xs font-bold text-blue-500 uppercase tracking-wider mb-3">In Progress</div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm border border-brand-200 ring-1 ring-brand-100">
+                                    <div class="h-2 w-16 bg-blue-200 rounded mb-2"></div>
+                                    <div class="h-4 w-3/4 bg-slate-800 rounded mb-4"></div>
+                                    <div class="flex justify-between">
+                                        <div class="w-5 h-5 rounded-full bg-brand-500"></div>
+                                        <div class="h-4 w-12 bg-slate-100 rounded"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -left-4 w-full h-full bg-purple-100 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Left Text, Right UI -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
+                    <div class="flex-1 lg:pr-10">
+                        <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-6">
+                            <i data-lucide="receipt" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">Create and send invoices in 60 seconds</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            Professional invoices with your branding, sent directly to your client. Track who's paid, who's late, and how much you're owed — automatically.
+                        </p>
+                    </div>
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
+                        <!-- Abstract Invoice Mockup -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative z-10">
+                            <div class="flex justify-between items-start mb-8">
+                                <div>
+                                    <div class="text-2xl font-bold text-slate-300 mb-1">INVOICE</div>
+                                    <div class="text-sm font-medium text-slate-900">#INV-2026-042</div>
+                                </div>
+                                <div class="px-3 py-1 bg-green-50 text-green-600 border border-green-200 rounded-lg text-sm font-bold flex items-center gap-1">
+                                    <i data-lucide="check" class="w-4 h-4"></i> PAID
+                                </div>
+                            </div>
+                            <div class="space-y-2 mb-6 border-b border-slate-100 pb-6">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">Website Redesign Phase 1</span>
+                                    <span class="font-medium text-slate-900">$2,500.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-slate-500">SEO Audit</span>
+                                    <span class="font-medium text-slate-900">$500.00</span>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-bold text-slate-900">Total</span>
+                                <span class="text-2xl font-bold text-brand-600">$3,000.00</span>
+                            </div>
+                        </div>
+                        <div class="absolute -top-4 -right-4 w-full h-full bg-green-100 rounded-2xl -z-10"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More Features Grid -->
+            <div class="mt-32 grid md:grid-cols-3 gap-8 reveal">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center mb-4">
+                        <i data-lucide="bell-ring" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Follow-Up Reminders</h4>
+                    <p class="text-slate-600 text-sm">Set a reminder on any client. ClientDeck will nudge you at exactly the right time so you follow up before a competitor does.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                        <i data-lucide="link" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Client Portal</h4>
+                    <p class="text-slate-600 text-sm">Share a clean, branded link where clients check status, download invoices, and approve work. No more "what's the update?"</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+                        <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-slate-900 mb-2">Business Snapshot</h4>
+                    <p class="text-slate-600 text-sm">Know your numbers without being an accountant. See monthly earnings and outstanding invoices at a glance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO IT'S FOR -->
+    <section class="py-24 bg-brand-950 text-white relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-800/50 blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-blue-800/30 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+            <p class="text-brand-400 font-semibold tracking-wide uppercase text-sm mb-3">Made For You</p>
+            <h2 class="text-3xl md:text-5xl font-bold mb-12">If you work for yourself, ClientDeck is for you.</h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto mb-12">
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>💻</span> <span class="font-medium">Web Designers & Devs</span>
+                </div>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>✍️</span> <span class="font-medium">Copywriters</span>
+                </div>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>📸</span> <span class="font-medium">Photographers</span>
+                </div>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>🎨</span> <span class="font-medium">Illustrators</span>
+                </div>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>📱</span> <span class="font-medium">Social Media Managers</span>
+                </div>
+                <div class="flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                    <span>🏗️</span> <span class="font-medium">Consultants & Coaches</span>
+                </div>
+            </div>
+
+            <p class="text-xl text-slate-300 italic font-medium">
+                "Whatever you do, if you have clients — you need ClientDeck."
+            </p>
+        </div>
+    </section>
+
+    <!-- COMPETITOR COMPARISON SECTION -->
+    <section class="py-24 bg-slate-50 border-t border-slate-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Compare</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Why switch to ClientDeck?</h2>
+            </div>
+
+            <div class="relative w-full overflow-x-auto pb-8 reveal">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 min-w-[800px]">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-5 px-6 text-left text-sm font-semibold text-slate-500 border-b-2 border-slate-100 w-1/4"></th>
+                                <th class="py-5 px-6 text-center text-lg font-bold text-brand-700 border-b-2 border-brand-500 bg-brand-50/80 whitespace-nowrap shadow-[0_-8px_0_0_#eff6ff]">ClientDeck</th>
+                                <th class="py-5 px-6 text-center text-sm font-semibold text-slate-900 border-b-2 border-slate-100 whitespace-nowrap">Bonsai</th>
+                                <th class="py-5 px-6 text-center text-sm font-semibold text-slate-900 border-b-2 border-slate-100 whitespace-nowrap">HoneyBook</th>
+                                <th class="py-5 px-6 text-center text-sm font-semibold text-slate-900 border-b-2 border-slate-100 whitespace-nowrap">Dubsado</th>
+                                <th class="py-5 px-6 text-center text-sm font-semibold text-slate-900 border-b-2 border-slate-100 whitespace-nowrap">Notion</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm">
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Setup time</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">3 minutes</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">2–3 hours</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">2–3 hours</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Days</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Weeks</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Built for freelancers</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">✅ Only</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Agencies too</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Agencies too</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌ General</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Price</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">$19/mo</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">$25/mo</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">$19/mo</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">$20/mo</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">$16/mo</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Learning curve</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">None</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Medium</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">High</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Very High</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">Very High</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Invoice generator</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Follow-up reminders</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b border-slate-100 font-medium text-slate-900">Client portal</td>
+                                <td class="py-4 px-6 border-b border-brand-100 bg-brand-50/80 font-bold text-brand-700 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">✅</td>
+                                <td class="py-4 px-6 border-b border-slate-100 text-slate-600 text-center">❌</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="py-4 px-6 border-b-0 font-medium text-slate-900 rounded-bl-2xl">Feels overwhelming</td>
+                                <td class="py-4 px-6 border-b-0 bg-brand-50/80 font-bold text-brand-700 text-center rounded-b-xl shadow-[0_8px_0_0_#eff6ff]">Never</td>
+                                <td class="py-4 px-6 border-b-0 text-slate-600 text-center">Sometimes</td>
+                                <td class="py-4 px-6 border-b-0 text-slate-600 text-center">Often</td>
+                                <td class="py-4 px-6 border-b-0 text-slate-600 text-center">Always</td>
+                                <td class="py-4 px-6 border-b-0 text-slate-600 text-center rounded-br-2xl">Always</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- The Narrative Underneath The Table -->
+            <div class="max-w-4xl mx-auto mt-12 reveal">
+                <div class="bg-brand-950 rounded-2xl p-8 md:p-10 shadow-xl relative overflow-hidden">
+                    <!-- Accent Decoration -->
+                    <div class="absolute top-0 left-0 w-2 h-full bg-brand-500"></div>
+                    
+                    <p class="text-lg md:text-xl leading-relaxed text-slate-300 font-medium text-center relative z-10">
+                        "Bonsai, HoneyBook and Dubsado are powerful tools — built for established agencies managing complex workflows. If that's you, they're great. But if you're a solo freelancer who just wants to add a client, send an invoice, and get back to doing the work you love — <span class="text-white font-bold">ClientDeck gets you there in 3 minutes, not 3 days.</span>"
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF (Reframed to highlight early feedback/frustration) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <p class="text-brand-600 font-semibold tracking-wide uppercase text-sm mb-3">Early Feedback</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">What freelancers are telling us</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 reveal">
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 relative">
+                    <div class="text-brand-300 absolute top-4 left-4">
+                        <i data-lucide="quote" class="w-10 h-10 opacity-50"></i>
+                    </div>
+                    <p class="text-slate-700 relative z-10 mt-4 mb-6 italic">
+                        "I've tried Notion, HoneyBook, and three other complex tools. Nothing stuck. ClientDeck looks like exactly what I've been waiting for—something simple."
+                    </p>
+                    <div class="font-bold text-slate-900">— Waitlist Member (Developer)</div>
+                </div>
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 relative">
+                    <div class="text-brand-300 absolute top-4 left-4">
+                        <i data-lucide="quote" class="w-10 h-10 opacity-50"></i>
+                    </div>
+                    <p class="text-slate-700 relative z-10 mt-4 mb-6 italic">
+                        "I lose at least $500/month to forgotten follow-ups. If ClientDeck fixes that alone, I'm absolutely in."
+                    </p>
+                    <div class="font-bold text-slate-900">— Waitlist Member (Consultant)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TEASER -->
+    <section id="pricing" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-100 text-brand-700 text-sm font-bold mb-6">
+                    🎉 Early Access Perk
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Get in early.<br/>Lock in your rate forever.</h2>
+                <p class="text-lg text-slate-600">
+                    Early access members lock in a 50% discount on Pro & Premium tiers for life. Price goes up at public launch.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
+                <!-- Starter -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="text-xl font-bold text-slate-900 mb-2">🆓 Starter</div>
+                    <div class="text-3xl font-extrabold text-slate-900 mb-6">Free <span class="text-base font-normal text-slate-500">forever</span></div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Up to 3 active projects</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Basic client management</li>
+                    </ul>
+                </div>
+                <!-- Pro (Highlighted) -->
+                <div class="bg-brand-950 rounded-3xl p-8 border border-brand-800 shadow-xl flex flex-col relative transform md:-translate-y-4">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-brand-400 to-brand-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                        Most Popular
+                    </div>
+                    <div class="text-xl font-bold text-white mb-2">⚡ Pro</div>
+                    <div class="flex items-end gap-2 mb-6">
+                        <div class="text-slate-400 line-through text-xl">$38</div>
+                        <div class="text-4xl font-extrabold text-white">$19<span class="text-base font-normal text-slate-400">/mo</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Unlimited clients & projects</li>
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Invoices + Payments</li>
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Smart Reminders</li>
+                    </ul>
+                </div>
+                <!-- Premium -->
+                <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col">
+                    <div class="text-xl font-bold text-slate-900 mb-2">👑 Premium</div>
+                    <div class="flex items-end gap-2 mb-6">
+                        <div class="text-slate-400 line-through text-xl">$78</div>
+                        <div class="text-3xl font-extrabold text-slate-900">$39<span class="text-base font-normal text-slate-500">/mo</span></div>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-1">
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Everything in Pro</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Client Portal</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Advanced Reports</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#early-access" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                    Reserve My Early Access Price
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="py-24 bg-white border-t border-slate-200">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-3xl font-bold text-slate-900 mb-10 text-center">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <details class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold p-6 text-slate-900 hover:text-brand-600 transition-colors">
+                        When will ClientDeck launch?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 p-6 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        We are currently in private beta, fine-tuning the experience with our first cohort. We plan to open up access to the waitlist on a rolling basis starting next month. Join now to secure your spot at the front of the line.
+                    </div>
+                </details>
+                <!-- FAQ 2 -->
+                <details class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold p-6 text-slate-900 hover:text-brand-600 transition-colors">
+                        Can I export my data later?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 p-6 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        Yes, absolutely. We believe your data belongs to you. You will be able to export your clients, projects, and invoice data at any time in standard CSV format. No platform lock-in, ever.
+                    </div>
+                </details>
+                <!-- FAQ 3 -->
+                <details class="group bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden cursor-pointer">
+                    <summary class="flex justify-between items-center font-bold p-6 text-slate-900 hover:text-brand-600 transition-colors">
+                        Is my financial data secure?
+                        <span class="transition group-open:rotate-180">
+                            <i data-lucide="chevron-down" class="w-5 h-5 text-slate-400"></i>
+                        </span>
+                    </summary>
+                    <div class="text-slate-600 p-6 pt-0 leading-relaxed border-t border-slate-100 mt-2">
+                        Security is our top priority. ClientDeck uses bank-level encryption (AES-256) to protect your data. For payments, we integrate directly with industry leaders like Stripe, meaning we never store your clients' sensitive credit card information on our servers.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="early-access" class="py-24 bg-brand-600 relative overflow-hidden">
+        <!-- Abstract BG patterns -->
+        <div class="absolute inset-0 opacity-10">
+            <svg class="h-full w-full" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M0 40V0H40" fill="none" stroke="white" stroke-width="2"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#grid-pattern)"/>
+            </svg>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">Stop managing clients the hard way.</h2>
+            <p class="text-xl text-brand-100 mb-10 max-w-2xl mx-auto">
+                Join hundreds of freelancers who are done with spreadsheet chaos. Get early access to ClientDeck and experience a smarter way to run your business.
+            </p>
+            
+            <form id="cta-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl rounded-2xl p-2 bg-white border border-brand-500">
+                <input type="email" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-4 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none">
+                <button type="submit" class="w-full sm:w-auto flex-none bg-brand-950 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl transition-colors">
+                    Claim My Spot
+                </button>
+            </form>
+            <div id="cta-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-brand-500/50 text-white rounded-xl font-medium border border-brand-400 backdrop-blur-sm">
+                🎉 Spot claimed! We'll be in touch soon.
+            </div>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-brand-100 font-medium">
+                <div class="flex items-center gap-2"><i data-lucide="lock" class="w-4 h-4"></i> No credit card</div>
+                <div class="flex items-center gap-2"><i data-lucide="rocket" class="w-4 h-4"></i> Free to start</div>
+                <div class="flex items-center gap-2"><i data-lucide="x" class="w-4 h-4"></i> Cancel anytime</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">C</div>
+                <span class="font-bold text-xl tracking-tight text-white">ClientDeck<span class="text-brand-400">.tech</span></span>
+            </div>
+            
+            <div class="text-slate-400 text-sm text-center md:text-left">
+                Built for freelancers, by people who get it.<br/>
+                &copy; 2026 ClientDeck.tech. All rights reserved.
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-slate-400">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                <div class="flex gap-4 ml-4">
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="hover:text-brand-400 transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-sm');
+                navbar.classList.replace('bg-transparent', 'glass');
+            } else {
+                navbar.classList.remove('shadow-sm');
+                // Keep glass effect but make it lighter at top if desired, currently stays glass
+            }
+        });
+
+        // Form Submission Simulation
+        const handleForm = (formId, successId) => {
+            const form = document.getElementById(formId);
+            const successMsg = document.getElementById(successId);
+            
+            if(form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const btn = form.querySelector('button');
+                    const originalText = btn.innerText;
+                    
+                    btn.innerText = 'Joining...';
+                    btn.disabled = true;
+                    btn.classList.add('opacity-75');
+
+                    // Simulate API call
+                    setTimeout(() => {
+                        form.classList.add('hidden');
+                        successMsg.classList.remove('hidden');
+                        
+                        // Fire confetti (optional psychological boost for early access)
+                        console.log("User added to waitlist!");
+                    }, 800);
+                });
+            }
+        };
+
+        handleForm('hero-form', 'hero-success');
+        handleForm('cta-form', 'cta-success');
+
+        // Scroll Reveal Animation Observer
+        const revealOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, revealOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
