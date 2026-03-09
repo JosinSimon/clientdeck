@@ -145,12 +145,12 @@
                 </p>
                 
                 <!-- Email Capture Form -->
-                <form id="hero-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl shadow-brand-500/10 rounded-2xl p-2 bg-white border border-slate-200">
-                    <input type="email" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-3 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
-                    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-sm">
-                        Get Early Access
-                    </button>
-                </form>
+                <form id="hero-form" action="https://docs.google.com/forms/d/1FSBJcBW-kaUzF0j8A76lgWjqEp50rAMK404YAJMQUz4/formResponse" method="POST" target="hidden_iframe_hero" onsubmit="submittedHero=true; this.querySelector('button').innerText='Joining...'; this.querySelector('button').classList.add('opacity-75');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl shadow-brand-500/10 rounded-2xl p-2 bg-white border border-slate-200">
+    <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-3 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
+    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-sm">
+        Get Early Access
+    </button>
+</form>
                 <div id="hero-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200">
                     🎉 You're on the list! Keep an eye on your inbox.
                 </div>
@@ -891,12 +891,12 @@
                 Join hundreds of freelancers who are done with spreadsheet chaos. Get early access to ClientDeck and experience a smarter way to run your business.
             </p>
             
-            <form id="cta-form" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl rounded-2xl p-2 bg-white border border-brand-500">
-                <input type="email" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-4 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none">
-                <button type="submit" class="w-full sm:w-auto flex-none bg-brand-950 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl transition-colors">
-                    Claim My Spot
-                </button>
-            </form>
+            <form id="cta-form" action="https://docs.google.com/forms/d/1FSBJcBW-kaUzF0j8A76lgWjqEp50rAMK404YAJMQUz4/formResponse" method="POST" target="hidden_iframe_cta" onsubmit="submittedCta=true; this.querySelector('button').innerText='Joining...'; this.querySelector('button').classList.add('opacity-75');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl rounded-2xl p-2 bg-white border border-brand-500">
+    <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-4 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none">
+    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-950 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl transition-colors">
+        Claim My Spot
+    </button>
+</form>
             <div id="cta-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-brand-500/50 text-white rounded-xl font-medium border border-brand-400 backdrop-blur-sm">
                 🎉 Spot claimed! We'll be in touch soon.
             </div>
@@ -1002,9 +1002,14 @@
             revealOnScroll.observe(el);
         });
     </script>
+    <!-- Hidden iFrames for Google Forms submission -->
+<script>var submittedHero = false; var submittedCta = false;</script>
+<iframe name="hidden_iframe_hero" id="hidden_iframe_hero" style="display:none;" onload="if(submittedHero) { document.getElementById('hero-form').classList.add('hidden'); document.getElementById('hero-success').classList.remove('hidden'); }"></iframe>
+<iframe name="hidden_iframe_cta" id="hidden_iframe_cta" style="display:none;" onload="if(submittedCta) { document.getElementById('cta-form').classList.add('hidden'); document.getElementById('cta-success').classList.remove('hidden'); }"></iframe>
 </body>
 
 </html>
+
 
 
 
