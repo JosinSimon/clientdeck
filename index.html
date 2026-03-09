@@ -38,6 +38,8 @@
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'bounce': 'bounce 2s infinite',
+                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     },
                     keyframes: {
                         float: {
@@ -146,11 +148,11 @@
                 
                 <!-- Email Capture Form -->
                 <form id="hero-form" action="https://docs.google.com/forms/d/1FSBJcBW-kaUzF0j8A76lgWjqEp50rAMK404YAJMQUz4/formResponse" method="POST" target="hidden_iframe_hero" onsubmit="submittedHero=true; this.querySelector('button').innerText='Joining...'; this.querySelector('button').classList.add('opacity-75');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl shadow-brand-500/10 rounded-2xl p-2 bg-white border border-slate-200">
-    <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-3 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
-    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-sm">
-        Get Early Access
-    </button>
-</form>
+                    <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-3 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-600 hover:bg-brand-700 text-white font-medium py-3 px-6 rounded-xl transition-colors shadow-sm">
+                        Get Early Access
+                    </button>
+                </form>
                 <div id="hero-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200">
                     🎉 You're on the list! Keep an eye on your inbox.
                 </div>
@@ -296,141 +298,91 @@
             </div>
 
             <div class="space-y-24">
-                <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Reports Feature Preview</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Tailwind Config for Custom Branding -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            500: '#3b82f6',
-                        }
-                    },
-                    animation: {
-                        'bounce': 'bounce 2s infinite',
-                        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-<body class="bg-slate-50 text-slate-900 font-sans p-8 lg:p-24 overflow-x-hidden flex items-center justify-center min-h-screen">
-
-    <div class="max-w-7xl mx-auto w-full">
-        <!-- Feature 1: Automated Reports (New Top Feature) -->
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
-            
-            <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
-                <!-- Abstract AI Report Mockup -->
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative z-10 flex flex-col gap-0">
-                    
-                    <!-- Step 1: Input Area -->
-                    <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 pb-8 relative">
-                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-3">Raw Metrics Uploaded</div>
-                        <div class="space-y-3">
-                            <div class="flex justify-between items-center bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                                <span class="text-xs font-semibold text-slate-600">Monthly Traffic</span>
-                                <span class="text-xs font-bold text-green-500 flex items-center"><i data-lucide="trending-up" class="w-3 h-3 mr-1"></i> 12,450</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
-                                <span class="text-xs font-semibold text-slate-600">New Conversions</span>
-                                <span class="text-xs font-bold text-green-500 flex items-center"><i data-lucide="trending-up" class="w-3 h-3 mr-1"></i> 234</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- The AI Magic Divider -->
-                    <div class="flex items-center justify-center -my-4 relative z-20">
-                        <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full p-2.5 shadow-lg border-4 border-white animate-bounce relative">
-                            <i data-lucide="sparkles" class="w-5 h-5"></i>
-                            <!-- Glow effect -->
-                            <div class="absolute inset-0 bg-indigo-500 rounded-full blur animate-pulse -z-10"></div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Output Area -->
-                    <div class="bg-white border-2 border-indigo-50 rounded-xl p-5 pt-8 shadow-[0_10px_30px_rgba(79,70,229,0.08)] relative overflow-hidden">
-                        <!-- Colored Top Edge -->
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
-                        
-                        <div class="flex justify-between items-center mb-4">
-                            <div class="text-[10px] font-bold text-indigo-500 uppercase tracking-wider">Generated Report</div>
-                            <div class="text-[10px] font-bold text-green-600 flex items-center gap-1 bg-green-50 border border-green-100 px-2 py-0.5 rounded-full">
-                                <i data-lucide="send" class="w-3 h-3"></i> Sent Automatically
-                            </div>
-                        </div>
-                        <div class="space-y-2 mb-4 opacity-50">
-                            <div class="h-2 w-full bg-slate-200 rounded"></div>
-                            <div class="h-2 w-5/6 bg-slate-200 rounded"></div>
-                        </div>
-                        <!-- AI Text Block -->
-                        <div class="p-3.5 bg-indigo-50/50 rounded-lg border border-indigo-100/50 text-sm text-indigo-900 leading-relaxed italic relative">
-                            <i data-lucide="quote" class="w-4 h-4 absolute top-2 right-2 text-indigo-200/50"></i>
-                            "This month's performance was outstanding. With traffic reaching 12,450 sessions and a solid 8% lift in total conversions, our current strategy is highly effective..."
-                        </div>
-                    </div>
-                </div>
                 
-                <!-- Decorative bg block -->
-                <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100/80 rounded-2xl -z-10"></div>
-            </div>
+                <!-- Feature 1: Automated Reports (New Top Feature) -->
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
+                    
+                    <div class="flex-1 w-full max-w-lg lg:max-w-none relative">
+                        <!-- Abstract AI Report Mockup -->
+                        <div class="bg-white rounded-2xl border border-slate-200 shadow-xl p-6 relative z-10 flex flex-col gap-0">
+                            
+                            <!-- Step 1: Input Area -->
+                            <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 pb-8 relative">
+                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-3">Raw Metrics Uploaded</div>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between items-center bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                                        <span class="text-xs font-semibold text-slate-600">Monthly Traffic</span>
+                                        <span class="text-xs font-bold text-green-500 flex items-center"><i data-lucide="trending-up" class="w-3 h-3 mr-1"></i> 12,450</span>
+                                    </div>
+                                    <div class="flex justify-between items-center bg-white p-2.5 rounded-lg border border-slate-100 shadow-sm">
+                                        <span class="text-xs font-semibold text-slate-600">New Conversions</span>
+                                        <span class="text-xs font-bold text-green-500 flex items-center"><i data-lucide="trending-up" class="w-3 h-3 mr-1"></i> 234</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- The AI Magic Divider -->
+                            <div class="flex items-center justify-center -my-4 relative z-20">
+                                <div class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full p-2.5 shadow-lg border-4 border-white animate-bounce relative">
+                                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                    <!-- Glow effect -->
+                                    <div class="absolute inset-0 bg-indigo-500 rounded-full blur animate-pulse -z-10"></div>
+                                </div>
+                            </div>
 
-            <div class="flex-1 lg:pl-10">
-                <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6 shadow-sm">
-                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                            <!-- Step 2: Output Area -->
+                            <div class="bg-white border-2 border-indigo-50 rounded-xl p-5 pt-8 shadow-[0_10px_30px_rgba(79,70,229,0.08)] relative overflow-hidden">
+                                <!-- Colored Top Edge -->
+                                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
+                                
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="text-[10px] font-bold text-indigo-500 uppercase tracking-wider">Generated Report</div>
+                                    <div class="text-[10px] font-bold text-green-600 flex items-center gap-1 bg-green-50 border border-green-100 px-2 py-0.5 rounded-full">
+                                        <i data-lucide="send" class="w-3 h-3"></i> Sent Automatically
+                                    </div>
+                                </div>
+                                <div class="space-y-2 mb-4 opacity-50">
+                                    <div class="h-2 w-full bg-slate-200 rounded"></div>
+                                    <div class="h-2 w-5/6 bg-slate-200 rounded"></div>
+                                </div>
+                                <!-- AI Text Block -->
+                                <div class="p-3.5 bg-indigo-50/50 rounded-lg border border-indigo-100/50 text-sm text-indigo-900 leading-relaxed italic relative">
+                                    <i data-lucide="quote" class="w-4 h-4 absolute top-2 right-2 text-indigo-200/50"></i>
+                                    "This month's performance was outstanding. With traffic reaching 12,450 sessions and a solid 8% lift in total conversions, our current strategy is highly effective..."
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Decorative bg block -->
+                        <div class="absolute -top-4 -left-4 w-full h-full bg-indigo-100/80 rounded-2xl -z-10"></div>
+                    </div>
+
+                    <div class="flex-1 lg:pl-10">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-6 shadow-sm">
+                            <i data-lucide="sparkles" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">Your clients get beautiful reports. You do zero work.</h3>
+                        <p class="text-lg text-slate-600 mb-6">
+                            Stop spending Sunday nights copy-pasting analytics screenshots into PowerPoints. ClientDeck automatically generates stunning branded reports and sends them to your clients every month — while you sleep.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
+                                <span>Upload your metrics — ClientDeck builds the report</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
+                                <span>AI writes the insights and summaries for you</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-slate-700">
+                                <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
+                                <span>Auto-sends to your client on a schedule you set</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <h3 class="text-3xl font-bold text-slate-900 mb-4">Your clients get beautiful reports. You do zero work.</h3>
-                <p class="text-lg text-slate-600 mb-6">
-                    Stop spending Sunday nights copy-pasting analytics screenshots into PowerPoints. ClientDeck automatically generates stunning branded reports and sends them to your clients every month — while you sleep.
-                </p>
-                <ul class="space-y-3">
-                    <li class="flex items-start gap-3 text-slate-700">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
-                        <span>Upload your metrics — ClientDeck builds the report</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-slate-700">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
-                        <span>AI writes the insights and summaries for you</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-slate-700">
-                        <i data-lucide="check-circle-2" class="w-6 h-6 text-brand-500 shrink-0 mt-0.5"></i> 
-                        <span>Auto-sends to your client on a schedule you set</span>
-                    </li>
-                </ul>
-            </div>
-            
-        </div>
-    </div>
 
-    <!-- Initialize Lucide Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
-</body>
-</html>
-                <!-- Feature 1: Left Text, Right UI -->
+                <!-- Feature 2: Left Text, Right UI -->
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
                     <div class="flex-1 lg:pr-10">
                         <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-600 flex items-center justify-center mb-6">
@@ -476,7 +428,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 2: Right Text, Left UI -->
+                <!-- Feature 3: Right Text, Left UI -->
                 <div class="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20 reveal">
                     <div class="flex-1 lg:pl-10">
                         <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-6">
@@ -519,7 +471,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 3: Left Text, Right UI -->
+                <!-- Feature 4: Left Text, Right UI -->
                 <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 reveal">
                     <div class="flex-1 lg:pr-10">
                         <div class="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-6">
@@ -892,11 +844,11 @@
             </p>
             
             <form id="cta-form" action="https://docs.google.com/forms/d/1FSBJcBW-kaUzF0j8A76lgWjqEp50rAMK404YAJMQUz4/formResponse" method="POST" target="hidden_iframe_cta" onsubmit="submittedCta=true; this.querySelector('button').innerText='Joining...'; this.querySelector('button').classList.add('opacity-75');" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3 shadow-2xl rounded-2xl p-2 bg-white border border-brand-500">
-    <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-4 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none">
-    <button type="submit" class="w-full sm:w-auto flex-none bg-brand-950 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl transition-colors">
-        Claim My Spot
-    </button>
-</form>
+                <input type="email" name="entry.1263240230" required placeholder="Enter your email address" class="flex-1 appearance-none rounded-xl py-4 px-4 bg-transparent text-slate-900 placeholder-slate-400 focus:outline-none">
+                <button type="submit" class="w-full sm:w-auto flex-none bg-brand-950 hover:bg-slate-800 text-white font-bold py-4 px-8 rounded-xl transition-colors">
+                    Claim My Spot
+                </button>
+            </form>
             <div id="cta-success" class="hidden max-w-md mx-auto mt-4 p-3 bg-brand-500/50 text-white rounded-xl font-medium border border-brand-400 backdrop-blur-sm">
                 🎉 Spot claimed! We'll be in touch soon.
             </div>
@@ -951,36 +903,6 @@
             }
         });
 
-        // Form Submission Simulation
-        const handleForm = (formId, successId) => {
-            const form = document.getElementById(formId);
-            const successMsg = document.getElementById(successId);
-            
-            if(form) {
-                form.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    const btn = form.querySelector('button');
-                    const originalText = btn.innerText;
-                    
-                    btn.innerText = 'Joining...';
-                    btn.disabled = true;
-                    btn.classList.add('opacity-75');
-
-                    // Simulate API call
-                    setTimeout(() => {
-                        form.classList.add('hidden');
-                        successMsg.classList.remove('hidden');
-                        
-                        // Fire confetti (optional psychological boost for early access)
-                        console.log("User added to waitlist!");
-                    }, 800);
-                });
-            }
-        };
-
-        handleForm('hero-form', 'hero-success');
-        handleForm('cta-form', 'cta-success');
-
         // Scroll Reveal Animation Observer
         const revealOptions = {
             threshold: 0.1,
@@ -1002,14 +924,10 @@
             revealOnScroll.observe(el);
         });
     </script>
+    
     <!-- Hidden iFrames for Google Forms submission -->
-<script>var submittedHero = false; var submittedCta = false;</script>
-<iframe name="hidden_iframe_hero" id="hidden_iframe_hero" style="display:none;" onload="if(submittedHero) { document.getElementById('hero-form').classList.add('hidden'); document.getElementById('hero-success').classList.remove('hidden'); }"></iframe>
-<iframe name="hidden_iframe_cta" id="hidden_iframe_cta" style="display:none;" onload="if(submittedCta) { document.getElementById('cta-form').classList.add('hidden'); document.getElementById('cta-success').classList.remove('hidden'); }"></iframe>
+    <script>var submittedHero = false; var submittedCta = false;</script>
+    <iframe name="hidden_iframe_hero" id="hidden_iframe_hero" style="display:none;" onload="if(submittedHero) { document.getElementById('hero-form').classList.add('hidden'); document.getElementById('hero-success').classList.remove('hidden'); }"></iframe>
+    <iframe name="hidden_iframe_cta" id="hidden_iframe_cta" style="display:none;" onload="if(submittedCta) { document.getElementById('cta-form').classList.add('hidden'); document.getElementById('cta-success').classList.remove('hidden'); }"></iframe>
 </body>
-
 </html>
-
-
-
-
