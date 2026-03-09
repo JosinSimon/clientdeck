@@ -728,48 +728,161 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal">
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto reveal mb-24">
                 <!-- Starter -->
                 <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col">
-                    <div class="text-xl font-bold text-slate-900 mb-2">🆓 Starter</div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-brand-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded tracking-wide">FREE</span>
+                        <div class="text-xl font-bold text-slate-900">Starter</div>
+                    </div>
                     <div class="text-3xl font-extrabold text-slate-900 mb-6">Free <span class="text-base font-normal text-slate-500">forever</span></div>
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Up to 3 active projects</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Up to 3 clients & projects</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> 2 invoices per month</li>
                         <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Basic client management</li>
                     </ul>
                 </div>
                 <!-- Pro (Highlighted) -->
-                <div class="bg-brand-950 rounded-3xl p-8 border-2 border-brand-500 shadow-xl flex flex-col relative transform scale-105">
-                  <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-400 to-brand-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-    Most Popular
-</div>
-                    <div class="text-xl font-bold text-white mb-2">⚡ Pro</div>
-                    <div class="flex items-end gap-2 mb-6">
-                        <div class="text-slate-400 line-through text-xl">$38</div>
+                <div class="bg-brand-950 rounded-3xl p-8 border border-brand-800 shadow-xl flex flex-col relative md:-mt-4 md:mb-4 overflow-visible">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-400 to-brand-600 text-white px-5 py-1.5 rounded-full text-sm font-bold shadow-xl z-50 whitespace-nowrap">
+                        Most Popular
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <div class="text-xl font-bold text-white">Pro</div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="text-slate-400 line-through text-xl font-medium">$38</div>
                         <div class="text-4xl font-extrabold text-white">$19<span class="text-base font-normal text-slate-400">/mo</span></div>
                     </div>
                     <ul class="space-y-4 mb-8 flex-1">
-                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Unlimited clients & projects</li>
-                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Invoices + Payments</li>
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Unlimited clients, projects & invoices</li>
                         <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Smart Reminders</li>
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> Manual Report Builder</li>
+                        <li class="flex items-start gap-3 text-slate-300"><i data-lucide="check" class="w-5 h-5 text-brand-400 shrink-0"></i> 3 report templates (5/mo)</li>
                     </ul>
                 </div>
                 <!-- Premium -->
                 <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col">
-                    <div class="text-xl font-bold text-slate-900 mb-2">👑 Premium</div>
-                    <div class="flex items-end gap-2 mb-6">
-                        <div class="text-slate-400 line-through text-xl">$78</div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="text-xl">👑</span>
+                        <div class="text-xl font-bold text-slate-900">Premium</div>
+                    </div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="text-slate-400 line-through text-xl font-medium">$78</div>
                         <div class="text-3xl font-extrabold text-slate-900">$39<span class="text-base font-normal text-slate-500">/mo</span></div>
                     </div>
                     <ul class="space-y-4 mb-8 flex-1">
                         <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Everything in Pro</li>
-                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Client Portal</li>
-                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Advanced Reports</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> AI-Powered Report Builder</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Unlimited auto-sent reports</li>
+                        <li class="flex items-start gap-3 text-slate-600"><i data-lucide="check" class="w-5 h-5 text-brand-500 shrink-0"></i> Client Portal & White-label</li>
                     </ul>
                 </div>
             </div>
+
+            <!-- Detailed Pricing Table -->
+            <div class="max-w-5xl mx-auto reveal">
+                <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 text-center">Detailed Feature Comparison</h3>
+                <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse min-w-[800px]">
+                            <thead>
+                                <tr class="bg-slate-50 border-b border-slate-200">
+                                    <th class="py-5 px-6 font-bold text-slate-900 w-1/4">Feature</th>
+                                    <th class="py-5 px-6 font-bold text-slate-900 text-center w-1/4">Free</th>
+                                    <th class="py-5 px-6 font-bold text-slate-900 text-center w-1/4">Pro <span class="text-slate-500 font-normal">$19/mo</span></th>
+                                    <th class="py-5 px-6 font-bold text-slate-900 text-center w-1/4">Premium <span class="text-slate-500 font-normal">$39/mo</span></th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-100 text-sm">
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Clients</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">3</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Projects</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">3</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Invoices</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">2/month</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Reminders</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Report builder</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center text-slate-600">
+                                        <div class="flex items-center justify-center gap-1.5">
+                                            <i data-lucide="check-square" class="w-5 h-5 text-green-500"></i> Manual
+                                        </div>
+                                    </td>
+                                    <td class="py-4 px-6 text-center text-slate-600">
+                                        <div class="flex items-center justify-center gap-1.5">
+                                            <i data-lucide="check-square" class="w-5 h-5 text-green-500"></i> AI-powered
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Report templates</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center text-slate-600">3 templates</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">10 templates</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Reports per month</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center text-slate-600">5</td>
+                                    <td class="py-4 px-6 text-center text-slate-600">Unlimited</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Auto-send reports</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">AI-written insights</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Google Analytics</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">Client portal</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50/50 transition-colors">
+                                    <td class="py-4 px-6 font-medium text-slate-900">White-label</td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="x" class="w-5 h-5 text-red-500 mx-auto"></i></td>
+                                    <td class="py-4 px-6 text-center"><i data-lucide="check-square" class="w-5 h-5 text-green-500 mx-auto"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
-            <div class="text-center mt-10">
+            <div class="text-center mt-12">
                 <a href="#early-access" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-medium rounded-xl text-white bg-brand-600 hover:bg-brand-700 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
                     Reserve My Early Access Price
                 </a>
@@ -931,11 +1044,3 @@
     <iframe name="hidden_iframe_cta" id="hidden_iframe_cta" style="display:none;" onload="if(submittedCta) { document.getElementById('cta-form').classList.add('hidden'); document.getElementById('cta-success').classList.remove('hidden'); }"></iframe>
 </body>
 </html>
-
-
-
-
-
-
-
-
